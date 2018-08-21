@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let colors = ["#0000FF", "#008000", "#FF0000", "#FFFF00", "#FF00FF", "#FFA500", "#800080", "#FFD700"];
         let ranNum = Math.floor(Math.random() * (colors.length));
         
+        return colors[ranNum];
     };
 
     let listCounter = 1;
