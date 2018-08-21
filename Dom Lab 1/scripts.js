@@ -61,35 +61,35 @@ document.addEventListener("DOMContentLoaded", function () {
         let colors = ["#0000FF", "#008000", "#FF0000", "#FFFF00", "#FF00FF", "#FFA500", "#800080", "#FFD700"];
         let ranNum = Math.floor(Math.random() * (colors.length));
         h2.style.color = colors[ranNum];
-        
+
     });
 
     h3.addEventListener("dblclick", function () {
         let colors = ["#0000FF", "#008000", "#FF0000", "#FFFF00", "#FF00FF", "#FFA500", "#800080", "#FFD700"];
         let ranNum = Math.floor(Math.random() * (colors.length));
         h3.style.color = colors[ranNum];
-        
+
     });
 
     h4.addEventListener("dblclick", function () {
         let colors = ["#0000FF", "#008000", "#FF0000", "#FFFF00", "#FF00FF", "#FFA500", "#800080", "#FFD700"];
         let ranNum = Math.floor(Math.random() * (colors.length));
         h4.style.color = colors[ranNum];
-        
+
     });
 
     h5.addEventListener("dblclick", function () {
         let colors = ["#0000FF", "#008000", "#FF0000", "#FFFF00", "#FF00FF", "#FFA500", "#800080", "#FFD700"];
         let ranNum = Math.floor(Math.random() * (colors.length));
         h5.style.color = colors[ranNum];
-        
+
     });
 
     h6.addEventListener("dblclick", function () {
         let colors = ["#0000FF", "#008000", "#FF0000", "#FFFF00", "#FF00FF", "#FFA500", "#800080", "#FFD700"];
         let ranNum = Math.floor(Math.random() * (colors.length));
         h6.style.color = colors[ranNum];
-        
+
     });
 
 
@@ -102,17 +102,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let ul = document.createElement("ul");
     document.body.appendChild(ul);
-    let li = document.createElement("li");
-    ul.appendChild(li);
 
-    function creatList() {
+    button.addEventListener("click", createList);
 
-        let ul = document.getElementsByClassName("ul");
+    function randomColor() {
+        let colors = ["#0000FF", "#008000", "#FF0000", "#FFFF00", "#FF00FF", "#FFA500", "#800080", "#FFD700"];
+        let ranNum = Math.floor(Math.random() * (colors.length));
+        
+    };
+
+    let listCounter = 1;
+
+    function createList() {
+
         let li = document.createElement("li");
+        ul.appendChild(li);
+        let textli = document.createTextNode("This is list item " + (listCounter++)); //This is where I am having issues.
+        li.appendChild(textli);
 
 
-        document.body.appendChild(ul);
-        ul.appendChild(il);
+        //At this point, nothing will appear on the screen. You have to .addEventListener(parameter) to appear in the HTML.
+
+        li.addEventListener("click", function () {
+
+            li.style.color = randomColor();
+
+
+        })
+
+        li.addEventListener("dblclick", function () {
+            this.remove();
+        })
     };
 
 
