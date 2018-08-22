@@ -1,0 +1,18 @@
+.button {
+    display: block;
+    color: red;
+}
+
+.makeSquare {
+    background-color: black;
+    display: inline-block;
+    margin: 2em;
+    padding: 2em;    
+}
+
+p {
+    color: red;
+    text-align: center;
+    width: 1em;
+    height: 1em;   
+}
